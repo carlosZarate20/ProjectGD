@@ -28,8 +28,8 @@ function sendDoc(){
                 console.log("Respuesta: ", response.respuestaRcc);
             }
             if(response && response.isValid == 3){
-                alert(response.setRespuestaRuc);
-                console.log("Respuesta: ", response.setRespuestaRuc);
+                alert(response.respuestaRuc);
+                console.log("Respuesta: ", response.respuestaRuc);
             }
             if(response && response.isValid == 4){
                 alert(response.respuestaRccAndRuc);

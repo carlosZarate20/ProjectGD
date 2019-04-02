@@ -35,17 +35,17 @@ public class ReniecServiceImpl implements ReniecService{
 			resultRcc = selectDocDao.getDocBaseRcc(inputData);
 			resultBuro = selectDocDao.getDocBaseBuro(inputData);
 			
-			if(resultRcc != 1) {
+			if(resultRcc == 0) {
 				response.setRespuestaRcc("Desaprobado por Rcc");
 				response.setIsValid(2L);
 				return response;
 			}
-			if(resultBuro != 1) {
+			if(resultBuro == 0) {
 				response.setRespuestaRuc("Desaprobado por Rubo");
 				response.setIsValid(3L);
 				return response;
 			}
-			if(resultRcc != 1 && resultBuro != 1) {
+			if(resultRcc == 0 && resultBuro == 0) {
 				response.setRespuestaRccAndRuc("Desaprobado por Rcc y Rubo");
 				response.setIsValid(4L);
 				return response;
