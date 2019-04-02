@@ -4,8 +4,11 @@ package com.project.base.projectBase.dto;
 public class ResponseDTO <A> {
 	private String respuestaReniec;
 	private String respuestaBaseCampana;
+	private String respuestaRccAndRuc;
 	private String respuestaRcc;
-	private String respuestaBuro;
+	private String respuestaRuc;
+	private String respuestaGeneral;
+	private Long isValid;
 	
 	public ResponseDTO() {
 		super();
@@ -28,6 +31,30 @@ public class ResponseDTO <A> {
 		this.respuestaBaseCampana = respuestaBaseCampana;
 	}
 
+	public String getRespuestaRccAndRuc() {
+		return respuestaRccAndRuc;
+	}
+
+	public void setRespuestaRccAndRuc(String respuestaRccAndRuc) {
+		this.respuestaRccAndRuc = respuestaRccAndRuc;
+	}
+
+	public String getRespuestaGeneral() {
+		return respuestaGeneral;
+	}
+
+	public void setRespuestaGeneral(String respuestaGeneral) {
+		this.respuestaGeneral = respuestaGeneral;
+	}
+
+	public Long getIsValid() {
+		return isValid;
+	}
+
+	public void setIsValid(Long isValid) {
+		this.isValid = isValid;
+	}
+
 	public String getRespuestaRcc() {
 		return respuestaRcc;
 	}
@@ -36,12 +63,12 @@ public class ResponseDTO <A> {
 		this.respuestaRcc = respuestaRcc;
 	}
 
-	public String getRespuestaBuro() {
-		return respuestaBuro;
+	public String getRespuestaRuc() {
+		return respuestaRuc;
 	}
 
-	public void setRespuestaBuro(String respuestaBuro) {
-		this.respuestaBuro = respuestaBuro;
-	}	
+	public void setRespuestaRuc(String respuestaRuc) {
+		this.respuestaRuc = respuestaRuc;
+	}
 	
 }

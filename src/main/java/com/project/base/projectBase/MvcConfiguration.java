@@ -1,16 +1,22 @@
 package com.project.base.projectBase;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+
 @Configuration
 @EnableWebMvc
+@ComponentScan({"com.project.base.projectBase", "com.project.base.psrojectBase.controller", 
+	"com.project.base.projectBase.service", "com.project.base.projectBase.model"})
 public class MvcConfiguration implements WebMvcConfigurer {
 	
 	@Override
@@ -23,6 +29,12 @@ public class MvcConfiguration implements WebMvcConfigurer {
 		registry.addResourceHandler("/resources/**") /*Permite manejar la ruta statica*/
 		//.addResourceLocations("/resources/"); 		  /*Se coloca la ubicacion de los recursos*/
 		.addResourceLocations("/resources/"); 		  /*Apunta al static */
+	}
+	@Override
+	public void addViewControllers(ViewControllerRegistry registry) {
+		registry.addViewController("/login").setViewName("/login/login");
+		registry.addViewController("/index").setViewName("/index/index");
+
 	}
 	
 	@Bean
