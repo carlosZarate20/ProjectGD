@@ -22,16 +22,16 @@ public class VistasController {
 		return folder + "/" + pagina;
 	}
 	
-//	@RequestMapping(value = "/", method = RequestMethod.GET)
-//	public String index(Locale locale, Model model) {
-//		try{
-//			Date date = new Date();
-//			DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);		
-//			String formattedDate = dateFormat.format(date);		
-//			model.addAttribute("serverTime", formattedDate );	
-//		} catch (Exception e) {
-//			LOGGER.error(e.getMessage(), e);
-//		}
-//		return "index/index";
-//	}	
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String index(Locale locale, Model model) {
+		try{
+			Date date = new Date();
+			DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);		
+			String formattedDate = dateFormat.format(date);		
+			model.addAttribute("serverTime", formattedDate );	
+		} catch (Exception e) {
+			LOGGER.error(e.getMessage(), e);
+		}
+		return "login";
+	}	
 }

@@ -27,12 +27,11 @@ public class MvcConfiguration implements WebMvcConfigurer {
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/resources/**") /*Permite manejar la ruta statica*/
-		//.addResourceLocations("/resources/"); 		  /*Se coloca la ubicacion de los recursos*/
 		.addResourceLocations("/resources/"); 		  /*Apunta al static */
 	}
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
-		registry.addViewController("/login").setViewName("/login/login");
+		registry.addViewController("/login").setViewName("login");
 		registry.addViewController("/index").setViewName("/index/index");
 
 	}
@@ -41,9 +40,9 @@ public class MvcConfiguration implements WebMvcConfigurer {
 	public ViewResolver getViewResolver(){
 		InternalResourceViewResolver resolver = new InternalResourceViewResolver();
 		resolver.setPrefix("/WEB-INF/");
-//		resolver.setSuffix(".jsp");
-		resolver.setSuffix(".html");
-//		resolver.setViewClass(JstlView.class);
+		resolver.setSuffix(".jsp");
+//		resolver.setSuffix(".html");
+		resolver.setViewClass(JstlView.class);
 		return resolver;
 	}
 }
