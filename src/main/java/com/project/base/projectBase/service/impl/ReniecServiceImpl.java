@@ -41,7 +41,7 @@ public class ReniecServiceImpl implements ReniecService{
 				return response;
 			}
 			if(resultBuro == 0) {
-				response.setRespuestaRuc("Desaprobado por Rubo");
+				response.setRespuestaRuc("Desaprobado por Buro");
 				response.setIsValid(3L);
 				return response;
 			}
