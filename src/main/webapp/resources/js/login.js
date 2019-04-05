@@ -22,7 +22,8 @@ function login(){
         }),
         success: function(response){
             if(response && response.successful){
-                window.location = gPath + '/index';
+//                window.location = gPath + '/index';
+                window.location ='http://localhost:8080/index/index';
                 console.log("Inicio de session correcto con el usuario: ", usuario);
             }else {
                 mostrarAlerta(response.message);
