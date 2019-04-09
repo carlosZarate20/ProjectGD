@@ -7,25 +7,44 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="theme-color" content="#094FA4" />
         <title>Index</title>
+        <link rel="stylesheet" href="resources/css/bootstrap/bootstrap.min.css">
+	    <link rel="stylesheet" href="resources/css/bootstrap/bootstrap-theme.min.css'">
+	    <link rel="stylesheet" href="resources/css/font-awesome/font-awesome.min.css'">
+	    <link rel="stylesheet" href="resources/css/frontend/menu/menu.css">
+	    <link rel="stylesheet" href="resources/css/frontend/cruceOfertas.css">
+	    <link rel="stylesheet" href="resources/css/frontend/main.css">
 
 </head>
+
 <body>
+
     <div>
         <form action="application/json" id ="docValues" method="post">
             <fieldset class="clearfix">
                 <p>
                     <span class="fa fa-user"></span>
-                    <input type="text" Placeholder="Documento" id="documento">
+                    <input type="text" Placeholder="Documento" id="documento" class="form-control" >
                 </p>
-                <div>
+                <div >
                     <span style="width:50%; text-align:right; float: right;">
-                        <input type="submit" id="btnenviar" value="enviar">
+                        <input class="btn btn-success" type="submit" id="btnenviar" value="enviar">
                     </span>
                 </div>
             </fieldset>
         </form>
     </div>
-    <script src="/resources/js/bootstrap/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="/resources/js/index.js"></script>
+    <script src="resources/js/bootstrap/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="resources/js/index.js"></script>
+    <script type="text/javascript">
+    function getContextPath() {
+ 	   return window.location.pathname.substring(0, window.location.pathname.indexOf("/",2));
+ 	}
+    </script>
+    <script type="text/javascript">
+// 		var session = localStorage.getItem("lastname");
+// 		if(session == null){
+// 			window.location = getContextPath() + '/login';
+// 		}
+</script>
 </body>
 </html>

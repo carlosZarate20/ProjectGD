@@ -29,7 +29,12 @@
             </fieldset>
         </form>
     </div>
-    <script src="/resources/js/bootstrap/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="/resources/js/login.js"></script>
+    <script src="resources/js/bootstrap/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="resources/js/login.js"></script>
+    <script type="text/javascript">
+    function getContextPath() {
+ 	   return window.location.pathname.substring(0, window.location.pathname.indexOf("/",2));
+ 	}
+    </script>
 </body>
 </html>

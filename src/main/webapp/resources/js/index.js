@@ -10,7 +10,7 @@ function sendDoc(){
     $.ajax({
         type: 'POST',
         contentType: 'application/json',
-        url: '/getDoc',
+        url: getContextPath() + '/getDoc',
         data: JSON.stringify({
             docIdentidad: docIdentificador
         }),

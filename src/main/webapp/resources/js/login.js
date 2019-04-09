@@ -1,6 +1,5 @@
 $("#loginValues").on("submit", function (event){
 	event.preventDefault();
-		
 	login();    
 });
 
@@ -15,15 +14,15 @@ function login(){
     $.ajax({
         type: 'POST',
         contentType: 'application/json',
-        url: '/login',
+        url: getContextPath + '/login',
         data: JSON.stringify({
             userName: usuario,
             password: contrasena
         }),
         success: function(response){
             if(response && response.successful){
-//                window.location = gPath + '/index';
-                window.location ='http://localhost:8080/index/index';
+            	window.location = getContextPath() + '/index/index';
+//                window.location ='http://localhost:8080/index/index';
                 console.log("Inicio de session correcto con el usuario: ", usuario);
             }else {
                 mostrarAlerta(response.message);

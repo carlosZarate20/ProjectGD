@@ -32,6 +32,6 @@ public class VistasController {
 		} catch (Exception e) {
 			LOGGER.error(e.getMessage(), e);
 		}
-		return "login";
+		return "index/index";
 	}	
 }
