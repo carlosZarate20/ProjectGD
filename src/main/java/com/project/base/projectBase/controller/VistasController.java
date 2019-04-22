@@ -17,11 +17,11 @@ public class VistasController {
 
 	private static final Logger LOGGER = LogManager.getLogger(VistasController.class);
 	
-	@RequestMapping(value = "/{folder}/{pagina}", method = RequestMethod.GET)
-	public String navegacion(@PathVariable ("folder") String folder, @PathVariable("pagina") String pagina) {
-		return folder + "/" + pagina;
-	}
-	
+//	@RequestMapping(value = "/{folder}/{pagina}", method = RequestMethod.GET)
+//	public String navegacion(@PathVariable ("folder") String folder, @PathVariable("pagina") String pagina) {
+//		return folder + "/" + pagina;
+//	}
+//	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String index(Locale locale, Model model) {
 		try{
@@ -32,6 +32,12 @@ public class VistasController {
 		} catch (Exception e) {
 			LOGGER.error(e.getMessage(), e);
 		}
-		return "index/index";
+		return "index";
 	}	
+	
+	@RequestMapping(value = "/{pagina}", method = RequestMethod.GET)
+	public String navegacion2(@PathVariable("pagina") String pagina) {
+		return pagina;
+	}
+	
 }

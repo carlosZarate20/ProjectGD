@@ -6,6 +6,9 @@ $("#docValues").on("submit", function (event){
 
 function sendDoc(){
     var docIdentificador = $('#documento').val();
+    var htmlValue = "";
+    $('#file_error').css('display', 'none');
+    $('#file_correct').css('display', 'none');
 
     $.ajax({
         type: 'POST',
@@ -16,28 +19,35 @@ function sendDoc(){
         }),
         success: function(response){
             if(response && response.isValid == 1){
-                alert(response.respuestaBaseCampana);
-                console.log("Respuesta: ", response.respuestaBaseCampana);
+                $('#file_error').css('display', 'inline-block');
+                htmlValue = response.respuestaBaseCampana;
+                $('#info').html(htmlValue);
+
             }
             if(response && response.isValid == 0){
-                alert(response.respuestaReniec);
-                console.log("Respuesta: ", response.respuestaReniec);
+                $('#file_error').css('display', 'inline-block');
+                htmlValue = response.respuestaReniec;
+                $('#info').html(htmlValue);
             }
             if(response && response.isValid == 2){
-                alert(response.respuestaRcc);
-                console.log("Respuesta: ", response.respuestaRcc);
+                $('#file_error').css('display', 'inline-block');
+                htmlValue = response.respuestaRcc;
+                $('#info').html(htmlValue);
             }
             if(response && response.isValid == 3){
-                alert(response.respuestaRuc);
-                console.log("Respuesta: ", response.respuestaRuc);
+                $('#file_error').css('display', 'inline-block');
+                htmlValue = response.respuestaRuc;
+                $('#info').html(htmlValue);
             }
             if(response && response.isValid == 4){
-                alert(response.respuestaRccAndRuc);
-                console.log("Respuesta: ", response.respuestaRccAndRuc);
+                $('#file_error').css('display', 'inline-block');
+                htmlValue = response.respuestaRccAndRuc;
+                $('#info').html(htmlValue);
             }
             if(response && response.isValid == 5){
-                alert(response.respuestaGeneral);
-                console.log("Respuesta: ", response.respuestaGeneral);
+                $('#file_correct').css('display', 'inline-block');
+                htmlValue = response.respuestaGeneral;
+                $('#info').html(htmlValue);
             }
         },error: function(e) {
             mostrarAlerta('Error!!!.');

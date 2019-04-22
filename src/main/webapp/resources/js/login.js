@@ -14,15 +14,14 @@ function login(){
     $.ajax({
         type: 'POST',
         contentType: 'application/json',
-        url: getContextPath + '/login',
+        url: '/login',
         data: JSON.stringify({
             userName: usuario,
             password: contrasena
         }),
         success: function(response){
             if(response && response.successful){
-            	window.location = getContextPath() + '/index/index';
-//                window.location ='http://localhost:8080/index/index';
+            	location.href = getContextPath() + '/index';
                 console.log("Inicio de session correcto con el usuario: ", usuario);
             }else {
                 mostrarAlerta(response.message);
@@ -59,4 +58,8 @@ function mostrarAlerta(mensaje) {
 	$('#alertMessage').fadeOut();
 	$('#alertMessage').text(mensaje);
 	$('#alertMessage').fadeIn();
+}
+
+function getContextPath() {
+    return window.location.pathname.substring(0, window.location.pathname.indexOf("/",2));
 }

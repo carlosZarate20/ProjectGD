@@ -2547,8 +2547,9 @@ output {
   color: #555;
 }
 .form-control {
+  text-align:center;
   display: block;
-  width: 100%;
+  width: 25%;
   height: 34px;
   padding: 6px 12px;
   font-size: 14px;

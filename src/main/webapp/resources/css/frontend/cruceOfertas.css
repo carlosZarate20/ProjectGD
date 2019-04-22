@@ -51,4 +51,16 @@ table {
     z-index: 9000;
     display: none;
 }
+input {
+	border: none;
+	font-family: 'Open Sans', Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.5em;
+	padding: 0;
+	-webkit-appearance: none;
+	align: center
+}
+.classTest{
+	text-align:center
+}
 

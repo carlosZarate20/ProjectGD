@@ -8,9 +8,9 @@
         <meta name="theme-color" content="#094FA4" />
         <title>Index</title>
         <link rel="stylesheet" href="resources/css/bootstrap/bootstrap.min.css">
-	    <link rel="stylesheet" href="resources/css/bootstrap/bootstrap-theme.min.css'">
-	    <link rel="stylesheet" href="resources/css/font-awesome/font-awesome.min.css'">
-	    <link rel="stylesheet" href="resources/css/frontend/menu/menu.css">
+	    <link rel="stylesheet" href="resources/css/bootstrap/bootstrap-theme.min.css">
+	    <link rel="stylesheet" href="resources/css/font-awesome/font-awesome.min.css">
+	    <link href="resources/css/frontend/menu/menu.css" rel="stylesheet" type="text/css">
 	    <link rel="stylesheet" href="resources/css/frontend/cruceOfertas.css">
 	    <link rel="stylesheet" href="resources/css/frontend/main.css">
 
@@ -21,30 +21,40 @@
     <div>
         <form action="application/json" id ="docValues" method="post">
             <fieldset class="clearfix">
-                <p>
-                    <span class="fa fa-user"></span>
+                <div class="container">
+                    </br>
+                </div>
+                <div class="container">
                     <input type="text" Placeholder="Documento" id="documento" class="form-control" >
-                </p>
-                <div >
-                    <span style="width:50%; text-align:right; float: right;">
+                </div>
+                    
+                <div class="container">
+                    <span style="width:25%; text-align:center;">
                         <input class="btn btn-success" type="submit" id="btnenviar" value="enviar">
                     </span>
                 </div>
+                
+                <!-- ALERTA -->
+                <div style="text-align:center;">
+                    <div class="alert alert-danger " role="alert" style="display: none; padding-left: 15px;" id="file_error">
+                        <span id="info"></span>
+                    </div>
+                    <div class="alert alert-success" role="alert" style="display: none; padding-left: 15px;" id="file_correct">
+                        <span id="info"></span>
+                    </div>
+                </div>
+                
+                
             </fieldset>
         </form>
     </div>
     <script src="resources/js/bootstrap/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="resources/js/index.js"></script>
+    <script src="resources/js/index.js"></script>
     <script type="text/javascript">
     function getContextPath() {
  	   return window.location.pathname.substring(0, window.location.pathname.indexOf("/",2));
  	}
     </script>
-    <script type="text/javascript">
-// 		var session = localStorage.getItem("lastname");
-// 		if(session == null){
-// 			window.location = getContextPath() + '/login';
-// 		}
-</script>
+
 </body>
 </html>
